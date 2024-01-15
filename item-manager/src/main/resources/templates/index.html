@@ -11,7 +11,8 @@
 <body>
     <h1>商品一覧</h1>
     
-    <table>
+    <!-- class属性にtblを追加 -->
+    <table class="tbl">
         <thead>
             <tr>
                 <th>id</th>
@@ -21,7 +22,8 @@
                 <th>在庫数</th>
                 <!-- カテゴリを追加 -->
                 <th>カテゴリ</th>
-                <th></th>
+                <!-- class属性にtbl-stockを追加 -->
+                <th class="tbl-stock"></th>
                 <th></th>
                 <th></th>
             </tr>
@@ -38,19 +40,24 @@
                 <!-- 入出荷ボタンの追加 -->
             <td>
                 <form th:action="@{/item/stock/{id}(id=${item.id})}" method="post">
-                    <input type="number" name="stock">
-                    <input type="submit" name="in" value="入荷">
-                    <input type="submit" name="out" value="出荷">
+                    <!-- class属性にtbl-formを追加 -->
+                        <input class="tbl-form" type="number" name="stock">
+                        <!-- class属性にtbl-stock-btnを追加 -->
+                        <input class="tbl-stock-btn" type="submit" name="in" value="入荷">
+                        <!-- class属性にtbl-stock-btnを追加 -->
+                        <input class="tbl-stock-btn" type="submit" name="out" value="出荷">
                 </form>
             </td>
                 <td>
                     <form th:action="@{/item/henshu/{id}(id=${item.id})}" method="get">
-                        <input type="submit" value="編集">
+                         <!-- class属性にtbl-btnを追加 -->
+                        <input class="tbl-btn" type="submit" value="編集">
                     </form>
                 </td>
                 <td>
                     <form th:action="@{/item/sakujo/{id}(id=${item.id})}"  method="post">
-                        <input type="submit" value="削除">
+                        <!-- class属性にtbl-btnを追加 -->
+                        <input class="tbl-btn" type="submit" value="削除">
                     </form>
                 </td>
             </tr>
